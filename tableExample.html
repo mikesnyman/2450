@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<script type="text/javascript">
+    function nestLoopTable(height, width)
+    {
+    document.write('<table background-color: green; color: blue;>')
+    	for(i = 0; i < height; i++){
+   			document.write('<tr>')
+   				for (j = 0; j < width; j++){
+      				document.write("<td><img src='num1.jpeg' height='75' width='75'></td>")
+   				}
+   			document.write('</tr>')
+		}
+    document.write('</table>')
+    }
+</script>
+
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+    
+<body>
+    <input type="submit" value="tableX" onClick="nestLoopTable(3,3)"/>
+    <div id="addtable"></div>
+</body>
+</html>

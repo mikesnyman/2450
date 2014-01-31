@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="myExternalStyle.css">
+</head>
+<body>
+	<h1 style >Web Application Project</h1>
+	<p><b>Game Description</b></p>
+	<p>This is a sliding tile game.  The player has three different options.<br>
+	Ordering numbers, a picture, or the alphabet.  The player clicks on <br>
+	the tile they want to move and if it is next to the blank tile they swap<br>
+	spaces.  If there is no adjacent empty space then nothing will move.  <br>
+	If you would like to see an animated example check out this  <a href="http://en.wikipedia.org/wiki/Sliding_puzzle" target="_blank">wikipedia</a> page.<br>
+	The object of the game is to order the tiles numerically, alphabetically, <br>
+	or the images to create a larger image.<br>
+	</p>
+	
+	<p><b>Puzzle Options</b> <a href="Examples.html">Here</a><br></p>
+	<p><b>Option 1 -  Numerical</b></p>
+	<table border="1">
+		<tr>
+		<td><img src="num1.jpeg" height="75" width="75"></td>
+		<td><img src="num2.jpeg" height="75" width="75"></td>
+		<td><img src="num3.jpeg" height="75" width="75"></td>
+		</tr>
+		<tr>
+		<td><img src="num4.jpeg" height="75" width="75"></td>
+		<td><img src="num5.jpeg" height="75" width="75"></td>
+		<td><img src="num6.jpeg" height="75" width="75"></td>
+		</tr>
+		<tr>
+		<td><img src="num7.jpeg" height="75" width="75"></td>
+		<td><img src="num8.jpeg" height="75" width="75"></td>
+		<td>  Blank tile</td>
+		</tr>
+	</table>
+	<h1 style >Preliminary Software design</h1>
+	
+	<h2><b>Model</b><br></h2>
+	<b>Constants:</b><br>
+	<li><b>TileArray</b> An array of tile objects is created.  This keeps track of the order of the tiles within the grid.<br>
+	<li><b>GridSize</b> The grid will always be a predetermined size which correlates with the array size.  Ex: 4x4 = 16 or 3x3 = 9 grid<br><br>	
+	<b>Tile Objects:</b><br>
+	There are two Types of Tile objects: One blank tile and multiple image tiles.  Each tile will occupy one grid space and <br>
+	have an assigned image and ID or available tiles to swap if blank tile.  The logic for which tiles can be swapped is hardcoded.<br>
+	Example: Slot 1 in a 3x3 grid can swap with slot 2 and slot 4.  Slot 2 can swap with 1, 3, & 5.   Slot 3 can swap with 2 & 6. etc <br>
+	
+		<li><b> Image </b>- A section of an image is assigned to each tile
+		<li><b> ID </b>- Each tile will have an ID stored in an array.  The array keeps track of the order of the tiles.
+		<li><b> Swap logic</b> - As explained above each grid space can only swap with other predetermines spaces.
+		<br><br>
+	<b>Game:</b><br>
+	The game will have the following properties
+	<li><b>Percentage Complete Bar</b>- A status bar will tell the player how many tiles are in the correct spot.
+	<li><b>Picture Selection </b>- The player will have 3 choices of images to chose from 
+	<br><br>
+	<b>Functions/Methods:</b><br>
+	The following functions could be methods of Tile or Game objects, but will be described as stand alone functions here.
+	<li><b>availableToSwap()</b> - Retrieves which tiles it may swap with.
+	<li><b>swapTile()</b> - When the selected tile is highlight and is adjacent to the blank tile it will swap positions.
+	<li><b>startGame()</b> - This will randomize the tiles within the grid
+	<li><b>isInOrder()</b> - After a tile is moved the array will be checked to see if its in order.
+	<li><b>gameComplete()</b> - If the array of tiles is ordered then a promote saying the game is won will appear.
+	<li><b>changePicture()</b> - A list of the images that can be played will appear and can be selected from
+	<li><b>timerStart()</b> - When the startGame() method is called the timerStart() will be called.
+	<li><b>displayTime()</b> - Displays the current running time of the game
+	<li><b>endGame()</b> - The time is stopped and a message box stating the user has quit will appear.  A conformation Y or N will be asked for
+</body>
+
+</html>

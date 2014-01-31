@@ -1,0 +1,5 @@
+body { font-family: Georgia, "Times New Roman", Times, serif; color: black; background-color: #c0c0c0 }
+h1 { font-family: Georgia, "Times New Roman", Times, serif; color: black; background-color: #00FF99 }
+table { border: 1px solid green; }
+th { background-color: green; color: blue; }
+td { text-align: center; }
